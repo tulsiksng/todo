@@ -6,21 +6,16 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
-import org.springframework.data.cassandra.core.mapping.UserDefinedType;
 
 import java.util.List;
 
+@Getter@Setter
 @AllArgsConstructor
-@Getter
-@Setter
-@UserDefinedType
 @Table
-public class Todo {
+public class User {
 
-    @Id
     @PrimaryKey
-    private String id;
-
-    private List<String> tasks;
-
+    @Id
+    private String phone;
+    private List<Todo> todoList;
 }
